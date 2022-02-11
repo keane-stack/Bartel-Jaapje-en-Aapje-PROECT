@@ -28,6 +28,13 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
             return View();
         }
 
+        [Route("aap")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

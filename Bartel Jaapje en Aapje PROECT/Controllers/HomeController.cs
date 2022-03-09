@@ -35,6 +35,15 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
             return View();
         }
 
+        [HttpPost]
+        [Route("contact")]
+        public IActionResult ContactPost(string voornaam)
+        {
+            
+
+            return View("contact");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

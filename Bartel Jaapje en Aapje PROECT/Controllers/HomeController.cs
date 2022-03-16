@@ -35,7 +35,11 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         {
             return View();
         }
-
+        [Route("Kaartverkoop")]
+        public IActionResult Kaartverkoop()
+        {
+            return View();
+        }
         [HttpPost]
         [Route("contact")]
         public IActionResult ContactPost(string voornaam)

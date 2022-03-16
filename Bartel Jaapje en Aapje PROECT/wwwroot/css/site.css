@@ -1,12 +1,15 @@
 ﻿header {
     position: fixed;
     left: 0;
-   top: 0;
+    top: 0;
     width: 100%;
-    background-color: red;
-    color: red;
+    background-color: white;
+    color: blue;
     text-align: center;
     height: 5%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 body{
 background-color: aquamarine;
@@ -25,3 +28,8 @@ footer {
     height: 5%;
 }
 
+
+cell{
+background-color: black;
+padding: 1rem;
+}

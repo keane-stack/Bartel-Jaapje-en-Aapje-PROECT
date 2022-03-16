@@ -1,6 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>Contact</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    ViewData["Title"] = "contact page";
+}
+<h1>@ViewData["Title"]</h1>
+<form method="post">
+    voornaam <input type ='text' name ='voornaam' />
+
+    achternaam <input type ='text' name ='achternaam' />
+
+    email <input type ='text' name ='email' />
+
+          <input type= 'submit' value ='opslaan' />
+</form>
+<p>Comntact.</p>

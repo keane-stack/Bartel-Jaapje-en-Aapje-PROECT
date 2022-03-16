@@ -12,7 +12,7 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 body{
-background-color: aquamarine;
+background-color: deepskyblue;
 }
 
 
@@ -25,7 +25,7 @@ footer {
     background-color: red;
     color: white;
     text-align: center;
-    height: 5%;
+    height: 75px;
 }
 
 

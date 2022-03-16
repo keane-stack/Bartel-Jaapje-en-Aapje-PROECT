@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bartel_Jaapje_en_Aapje_PROECT</title>
+    <title>@ViewData["Title"] - Bartel Jaapje en Aapje</title>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>header</header>    
-       
-    @RenderBody()
-    
-    <footer>&copy; 2022 - Bartel_Jaapje_en_Aapje_PROECT - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a></footer>
- 
+    <header>header</header>
+
+    <div class="container">
+      @RenderBody()
+  </div>
+
+    <footer class="border-top footer text-muted"></footer>
 
 </body>
 </html>

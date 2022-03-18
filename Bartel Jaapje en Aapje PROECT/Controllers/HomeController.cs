@@ -30,7 +30,7 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         }
 
 
-        [Route("contact")]
+        [Route("Contact")]
         public IActionResult Contact()
         {
             return View();
@@ -40,12 +40,7 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         {
             return View();
         }
-        [HttpPost]
-        [Route("contact")]
-        public IActionResult ContactPost(string voornaam)
-        {
-            return View("contact");
-        }
+       
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

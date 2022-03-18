@@ -4,45 +4,12 @@
 }
 <h1>@ViewData["Title"]</h1>
 <form method="post">
-    <div>
-        @Html.LabelFor(m=> m.FirstName)
-        @Html.TextBoxFor(m=> m.FirstName)
-        @Html.ValidationMessageFor(m=> m.FirstName)
-    </div>
+    voornaam <input type ='text' name ='voornaam' />
 
-     <div>
-        @Html.LabelFor(m=> m.LastName)
-        @Html.TextBoxFor(m=> m.LastName)
-        @Html.ValidationMessageFor(m=> m.LastName)
-    </div>
+    achternaam <input type ='text' name ='achternaam' />
 
-     <div>
-        @Html.LabelFor(m=> m.Email)
-        @Html.TextBoxFor(m=> m.Email)
-        @Html.ValidationMessageFor(m=> m.Email)
-    </div>
+    email <input type ='text' name ='email' />
 
-       <div>
-        @Html.LabelFor(m=> m.Phone)
-        @Html.TextBoxFor(m=> m.Phone)
-        @Html.ValidationMessageFor(m=> m.Phone)
-    </div>
-
-           <div>
-        @Html.LabelFor(m=> m.Address)
-        @Html.TextBoxFor(m=> m.Address)
-        @Html.ValidationMessageFor(m=> m.Address)
-    </div>
-
-               <div>
-        @Html.LabelFor(m=> m.Description)
-        @Html.TextBoxFor(m=> m.Description)
-        @Html.ValidationMessageFor(m=> m.Description)
-    </div>
-
-
-
-
-
-    <input type="submit" value="opslaan" />
+          <input type= 'submit' value ='opslaan' />
 </form>
+<p>Contact.</p>

@@ -4,24 +4,31 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    
 }
 
 body {
     font-family: montserrat;
+    text-align: center;
+    
 }
-
+lijf {
+    text-align: center;
+}
 nav {
-    background: #0082e6;
-    height: 80px;
+    background: #CBCBBE;
+    height: 12%;
     width: 100%;
+    text-align: left;
 }
 
 label.logo {
     color: white;
     font-size: 35px;
-    line-height: 80px;
+    line-height: 20px;
     padding: 0 100px;
     font-weight: bold;
+    
 }
 
 nav ul {
@@ -111,38 +118,3 @@ a.active, a:hover {
 
 
 
-(header {
-    
-    left: 0;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    color: blue;
-    text-align: center;
-    height: 5%;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-body{
-background-color: deepskyblue;
-}
-
-
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-    height: 75px;
-}
-
-
-cell{
-background-color: black;
-padding: 1rem;
-}

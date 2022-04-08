@@ -1,11 +1,7 @@
 ﻿using Bartel_Jaapje_en_Aapje_PROECT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
 {

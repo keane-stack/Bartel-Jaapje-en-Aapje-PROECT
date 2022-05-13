@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
 namespace Bartel_Jaapje_en_Aapje_PROECT.Database

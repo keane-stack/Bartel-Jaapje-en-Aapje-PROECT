@@ -1,6 +1,7 @@
 ﻿using Bartel_Jaapje_en_Aapje_PROECT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
@@ -16,7 +17,20 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            // alle producten ophalen
+            var rows = Database.DatabaseConnector.GetRows("select * from product");
+
+            // lijst maken om alle namen in te stoppen
+            List<string> names = new List<string>();
+
+            foreach (var row in rows)
+            {
+                // elke naam toevoegen aan de lijst met namen
+                names.Add(row["naam"].ToString());
+            }
+
+            // de lijst met namen in de html stoppen
+            return View(names);
         }
 
         [Route("privacy")]

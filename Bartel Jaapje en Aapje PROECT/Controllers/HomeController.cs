@@ -1,4 +1,5 @@
-﻿using Bartel_Jaapje_en_Aapje_PROECT.Models;
+﻿using Bartel_Jaapje_en_Aapje_PROECT.Database;
+using Bartel_Jaapje_en_Aapje_PROECT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -45,6 +46,20 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [Route("Contact")]
+        public IActionResult Contact(Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                // todo opslaan in database
+               return Redirect("/succes");
+            }
+
+            return View(person);
+        }
+
         [Route("Kaartverkoop")]
         public IActionResult Kaartverkoop()
         {
@@ -60,3 +75,4 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         }
     }
 }
+ 

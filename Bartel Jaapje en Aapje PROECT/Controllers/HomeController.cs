@@ -19,7 +19,7 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         public IActionResult Index()
         {
             // alle producten ophalen
-            var rows = Database.DatabaseConnector.GetRows("select * from product");
+            var rows = Database.DatabaseConnector.GetRows("select * from film");
 
             // lijst maken om alle namen in te stoppen
             List<string> names = new List<string>();
@@ -27,7 +27,7 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
             foreach (var row in rows)
             {
                 // elke naam toevoegen aan de lijst met namen
-                names.Add(row["naam"].ToString());
+                names.Add(row["titel"].ToString());
             }
 
             // de lijst met namen in de html stoppen

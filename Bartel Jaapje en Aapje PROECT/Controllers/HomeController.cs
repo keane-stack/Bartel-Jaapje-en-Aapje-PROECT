@@ -65,7 +65,15 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         {
             return View();
         }
-       
+
+        [Route("film/{id}")]
+        public IActionResult FilmDetails(int id)
+        {
+           
+
+            return View();
+        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

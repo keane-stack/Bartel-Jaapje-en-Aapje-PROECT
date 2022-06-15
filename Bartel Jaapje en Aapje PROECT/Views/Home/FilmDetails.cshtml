@@ -1,7 +1,8 @@
-﻿namespace Bartel_Jaapje_en_Aapje_PROECT.Views.Home
-{
-    public class FilmDetails
-    {
-        Details film
-    }
+﻿@using Bartel_Jaapje_en_Aapje_PROECT.Database
+@model Film
+@{
+    ViewData["titel"] = Model.Name;
 }
+
+<h1>@Model.Name</h1>
+<p>@Model.Prijs</p>

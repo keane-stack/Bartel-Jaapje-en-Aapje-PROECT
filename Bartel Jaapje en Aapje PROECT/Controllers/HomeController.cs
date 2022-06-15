@@ -15,8 +15,12 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         {
             _logger = logger;
         }
-
+       
         public IActionResult Index()
+        {
+            return View();
+        }
+        public List<Film> GetAllFilms()
         {
             // alle producten ophalen
             var rows = Database.DatabaseConnector.GetRows("select * from film");
@@ -27,7 +31,18 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
             foreach (var row in rows)
             {
                 // elke naam toevoegen aan de lijst met namen
+                Film f = new Film();
+                f.titel = row ["titel"].ToString();
+                f.duur = row["duur"].ToString();
+                f.beschrijving = row["duur"].ToString();
+                f.Beschikbaarheid = Convert.ToInt23(row["beschikbaarheid"]);
+                f.Id = convert.ToInt32(row["id"]);
+                films.Add(f);
+
+
+
                 names.Add(row["titel"].ToString());
+
             }
 
             // de lijst met namen in de html stoppen
@@ -69,9 +84,10 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         [Route("film/{id}")]
         public IActionResult FilmDetails(int id)
         {
-           
+            var film = Getfilm(id);
 
-            return View();
+
+            return View(film);
         }
 
 

@@ -1,6 +1,6 @@
 ﻿namespace Bartel_Jaapje_en_Aapje_PROECT.Database
 {
-    public class Product
+    public class Film
     {
        public int Id { get; set; }
         public string Name { get; set; }

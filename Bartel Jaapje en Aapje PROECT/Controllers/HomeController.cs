@@ -2,6 +2,7 @@
 using Bartel_Jaapje_en_Aapje_PROECT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -18,20 +19,33 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
 
         public IActionResult Index()
         {
-            // alle producten ophalen
-            var rows = Database.DatabaseConnector.GetRows("select * from film");
+            var films = GetAllFilms();
 
-            // lijst maken om alle namen in te stoppen
-            List<string> names = new List<string>();
+            // de lijst met namen in de html stoppen
+            return View(films);
+        }
+
+        public List<Film> GetAllFilms()
+        {
+            var rows = DatabaseConnector.GetRows("select * from film");
+
+            List<Film> films = new List<Film>();
 
             foreach (var row in rows)
             {
-                // elke naam toevoegen aan de lijst met namen
-                names.Add(row["titel"].ToString());
+                Film f = new Film();
+
+                f.Id = Convert.ToInt32(row["id"]);
+                f.Titel = row["titel"].ToString();
+                f.Duur = row["duur"].ToString();
+                f.Poster = row["poster"].ToString();
+                f.Beschrijving = row["beschrijving"].ToString();
+
+                films.Add(f);
+
             }
 
-            // de lijst met namen in de html stoppen
-            return View(names);
+            return films;
         }
 
         [Route("privacy")]

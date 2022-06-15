@@ -2,6 +2,7 @@
 using Bartel_Jaapje_en_Aapje_PROECT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -18,35 +19,33 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
        
         public IActionResult Index()
         {
-            return View();
+            var films = GetAllFilms();
+
+            // de lijst met namen in de html stoppen
+            return View(films);
         }
+
         public List<Film> GetAllFilms()
         {
-            // alle producten ophalen
-            var rows = Database.DatabaseConnector.GetRows("select * from film");
+            var rows = DatabaseConnector.GetRows("select * from film");
 
-            // lijst maken om alle namen in te stoppen
-            List<string> names = new List<string>();
+            List<Film> films = new List<Film>();
 
             foreach (var row in rows)
             {
-                // elke naam toevoegen aan de lijst met namen
                 Film f = new Film();
-                f.titel = row ["titel"].ToString();
-                f.duur = row["duur"].ToString();
-                f.beschrijving = row["duur"].ToString();
-                f.Beschikbaarheid = Convert.ToInt23(row["beschikbaarheid"]);
-                f.Id = convert.ToInt32(row["id"]);
+
+                f.Id = Convert.ToInt32(row["id"]);
+                f.Titel = row["titel"].ToString();
+                f.Duur = row["duur"].ToString();
+                f.Poster = row["poster"].ToString();
+                f.Beschrijving = row["beschrijving"].ToString();
+
                 films.Add(f);
-
-
-
-                names.Add(row["titel"].ToString());
 
             }
 
-            // de lijst met namen in de html stoppen
-            return View(names);
+            return films;
         }
 
         [Route("privacy")]

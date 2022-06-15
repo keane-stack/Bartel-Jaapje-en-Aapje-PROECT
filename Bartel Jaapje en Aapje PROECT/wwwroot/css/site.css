@@ -50,7 +50,7 @@ nav ul {
             text-transform: uppercase;
         }
 
-a.active, a:hover {
+nav a.active, nav a:hover {
     background: #1b9bff;
     transition: .5s;
 }
@@ -116,5 +116,15 @@ a.active, a:hover {
     }
 }
 
+.film-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
 
+.film {
+    height: 430px;
+    width: 300px;
+    background-size: cover;
+}
 

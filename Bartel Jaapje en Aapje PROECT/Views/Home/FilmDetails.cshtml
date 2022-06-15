@@ -1,8 +1,9 @@
 ﻿@using Bartel_Jaapje_en_Aapje_PROECT.Database
 @model Film
 @{
-    ViewData["titel"] = Model.Name;
+    ViewData["titel"] = Model.Titel;
 }
 
-<h1>@Model.Name</h1>
-<p>@Model.Prijs</p>
+<h1>@Model.Titel</h1>
+<p>@Model.Beschrijving</p>
+<img src="@Model.Poster"/>

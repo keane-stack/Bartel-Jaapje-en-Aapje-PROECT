@@ -48,6 +48,29 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
             return films;
         }
 
+        public Film GetFilm(int id)
+        {
+            var rows = DatabaseConnector.GetRows($"select * from film where id = {id}");
+
+            List<Film> films = new List<Film>();
+
+            foreach (var row in rows)
+            {
+                Film f = new Film();
+
+                f.Id = Convert.ToInt32(row["id"]);
+                f.Titel = row["titel"].ToString();
+                f.Duur = row["duur"].ToString();
+                f.Poster = row["poster"].ToString();
+                f.Beschrijving = row["beschrijving"].ToString();
+
+                films.Add(f);
+
+            }
+
+            return films[0];
+        }
+
         [Route("privacy")]
         public IActionResult Privacy()
         {
@@ -83,8 +106,7 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         [Route("film/{id}")]
         public IActionResult FilmDetails(int id)
         {
-            var film = Getfilm(id);
-
+            var film = GetFilm(id);
 
             return View(film);
         }

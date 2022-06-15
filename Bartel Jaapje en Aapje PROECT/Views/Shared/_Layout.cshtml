@@ -7,41 +7,33 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-         
 
-     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <img src="~/css/fotos/diamondintherough.png" alt="nieuwlogototdatikopschooloudelogoweerkangebruiken"  style="width:90px;height:80px;" />
-      <label class="logo">Barteljaapje&aapje
 
-      </label>
-      <ul>
-        <li><a class="active" href="/">Home</a></li>
-        <li><a href="/Kaartverkoop">Films & data</a></li>
-        <li><a href="/Contact">Contact</a></li>
-        
-        
-      </ul>
-      
+    <nav>
+        <img src="~/css/fotos/diamondintherough.png" alt="nieuwlogototdatikopschooloudelogoweerkangebruiken" style="width:90px;height:80px;" />
+
+        <div class="buttons">
+            <a class="active" href="/">Home</a>
+            <a href="/Kaartverkoop">Films & data</a>
+            <a href="/Contact">Contact</a>
+        </div>
+
+        <label class="logo">Barteljaapje&aapje</label>
     </nav>
 
- 
 
-  
-<div class="container grid">
-      @RenderBody()
-       </div>
 
-    
+
+    <div class="container grid">
+        @RenderBody()
+    </div>
+
+
 
     <footer class="border-top footer text-muted"></footer>
 
 </body>
- 
+
 </html>
 
 
- 

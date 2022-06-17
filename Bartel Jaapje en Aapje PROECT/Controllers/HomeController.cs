@@ -90,7 +90,7 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
         {
             if (ModelState.IsValid)
             {
-                // todo opslaan in database
+                DatabaseConnector.SavePerson(person); 
                return Redirect("/succes");
             }
 

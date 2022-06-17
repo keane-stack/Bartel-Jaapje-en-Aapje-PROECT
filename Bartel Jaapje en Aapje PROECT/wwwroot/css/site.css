@@ -116,6 +116,7 @@ nav a.active, nav a:hover {
     height: 430px;
     width: 300px;
     background-size: cover;
+    font-size: 2px;
 }
 
 .posterdetailpagina {

@@ -77,15 +77,21 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Controllers
             return View();
         }
 
+        [Route("succes")]
+        public IActionResult Succes()
+        {
+            return View();
+        }
 
-        [Route("Contact")]
+
+        [Route("contact")]
         public IActionResult Contact()
         {
             return View();
         }
 
         [HttpPost]
-        [Route("Contact")]
+        [Route("contact")]
         public IActionResult Contact(Person person)
         {
             if (ModelState.IsValid)

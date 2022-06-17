@@ -5,11 +5,11 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Database
 {
     public static class DatabaseConnector
     {
+        // stel in waar de database gevonden kan worden
+        static string connectionString = "Server=172.16.160.21;Port=3306;Database=110735;Uid=110735;Pwd=inf2122sql;";
 
         public static List<Dictionary<string, object>> GetRows(string query)
-        {
-            // stel in waar de database gevonden kan worden
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110735;Uid=110735;Pwd=inf2122sql;";
+        {          
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
@@ -48,6 +48,22 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Database
             // return de lijst met namen
             return rows;
         }
+        public static void SavePerson(Person person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, telefoon, adres, beschrijving) VALUES(?voornaam, ?achternaam, ?email, ?telefoon, ?adres, ?beschrijving)", conn);
 
+                // Elke parameter moet je handmatig toevoegen aan de query
+                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.FirstName;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.LastName;
+                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?telefoon", MySqlDbType.Text).Value = person.Phone;
+                cmd.Parameters.Add("?adres", MySqlDbType.Text).Value = person.Address;
+                cmd.Parameters.Add("?beschrijving", MySqlDbType.Text).Value = person.Description;                
+                cmd.ExecuteNonQuery();
+            }
+        }   
     }
 }

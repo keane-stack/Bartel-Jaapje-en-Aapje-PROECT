@@ -9,20 +9,20 @@
   <ItemGroup>
     <Compile Remove="Controllers\NewFolder\**" />
     <Compile Remove="Views\Home\NewFolder1\**" />
-    <Compile Remove="Views\Home\NewFolder\**" />
     <Compile Remove="Views\Shared\foto\**" />
     <Content Remove="Controllers\NewFolder\**" />
     <Content Remove="Views\Home\NewFolder1\**" />
-    <Content Remove="Views\Home\NewFolder\**" />
     <Content Remove="Views\Shared\foto\**" />
     <EmbeddedResource Remove="Controllers\NewFolder\**" />
     <EmbeddedResource Remove="Views\Home\NewFolder1\**" />
-    <EmbeddedResource Remove="Views\Home\NewFolder\**" />
     <EmbeddedResource Remove="Views\Shared\foto\**" />
     <None Remove="Controllers\NewFolder\**" />
     <None Remove="Views\Home\NewFolder1\**" />
-    <None Remove="Views\Home\NewFolder\**" />
     <None Remove="Views\Shared\foto\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Home\Class.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -56,12 +56,12 @@ namespace Bartel_Jaapje_en_Aapje_PROECT.Database
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, telefoon, adres, beschrijving) VALUES(?voornaam, ?achternaam, ?email, ?telefoon, ?adres, ?beschrijving)", conn);
 
                 // Elke parameter moet je handmatig toevoegen aan de query
-                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.FirstName;
-                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.LastName;
+                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.Voornaam;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.Achternaam;
                 cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
-                cmd.Parameters.Add("?telefoon", MySqlDbType.Text).Value = person.Phone;
-                cmd.Parameters.Add("?adres", MySqlDbType.Text).Value = person.Address;
-                cmd.Parameters.Add("?beschrijving", MySqlDbType.Text).Value = person.Description;                
+                cmd.Parameters.Add("?telefoon", MySqlDbType.Text).Value = person.Telefoonnummer;
+                cmd.Parameters.Add("?adres", MySqlDbType.Text).Value = person.Adres;
+                cmd.Parameters.Add("?beschrijving", MySqlDbType.Text).Value = person.Beschrijving;                
                 cmd.ExecuteNonQuery();
             }
         }   
